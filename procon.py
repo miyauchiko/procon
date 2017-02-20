@@ -5,8 +5,8 @@ from colorama import Fore, Back, Style
 colorama.init(autoreset=True)
 gameover=False
 p=1
-h=5
-w=7
+h=2
+w=2
 stn=[]
 flg=[]
 for i in range(h*w):
@@ -19,7 +19,7 @@ def show_matrix():
             print(str(stn[i]).zfill(2), end=" ")
         elif flg[i] == 1:
             print(Back.BLUE + str(stn[i]).zfill(2), end=" ")
-        elif flg[1] == -1:
+        elif flg[i] == -1:
             print(Back.RED + str(stn[i]).zfill(2), end=" ")
         if i % w == w-1:
             print()
@@ -50,9 +50,10 @@ def referee():
     global gameover
     if 0 not in flg:
         gameover=True
-        print("winner is p")
+        print(Back.CYAN + "winner is " + str(p))
 
 while gameover == False:
+    print(flg)
     show_matrix()
     time.sleep(0.1)
     flging(trial(pickup()))
