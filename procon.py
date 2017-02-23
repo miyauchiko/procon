@@ -1,4 +1,4 @@
-import time
+#import time
 import random
 import colorama
 from colorama import Fore, Back, Style
@@ -51,13 +51,13 @@ def referee():
     if 0 not in flg:
         gameover=True
         print(Back.CYAN + "winner is " + str(p))
+def main():
+    while gameover == False:
+        print(flg)
+        show_matrix()
+        #time.sleep(0.1)
+        flging(trial(pickup()))
+        referee()
+        turning()
 
-while gameover == False:
-    print(flg)
-    show_matrix()
-    time.sleep(0.1)
-    flging(trial(pickup()))
-    referee()
-    turning()
-    #gameover=True
-#EOF
+main()
